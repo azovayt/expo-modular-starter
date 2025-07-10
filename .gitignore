@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules/
+.vscode/
 
 # Expo
 .expo/
@@ -17,6 +18,10 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+
+# Build output
+ios/
+android/
 
 # Metro
 .metro-health-check*
