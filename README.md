@@ -1,6 +1,6 @@
 # 🚀 Expo Modüler Başlangıç Şablonu
 
-Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar geliştirmek için tasarlanmış, iyi yapılandırılmış bir **Expo ** başlangıç şablonudur. Proje yapısı, büyük ve karmaşık uygulamaların yönetimini basitleştirmek için **Domain Driven Design (DDD)** ve **modüler programlama** prensiplerini benimser.
+Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar geliştirmek için tasarlanmış, iyi yapılandırılmış bir **Expo ** başlangıç şablonudur. Proje yapısı, büyük ve karmaşık uygulamaların yönetimini basitleştirmek için **modüler yapı** prensiplerini benimser.
 
 ---
 
