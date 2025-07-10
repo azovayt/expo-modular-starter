@@ -94,7 +94,7 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
 1.  **Depoyu Klonlayın:**
 
     ```bash
-    git clone [https://github.com/azovayt/expo-modular-starter.git](https://github.com/azovayt/expo-modular-starter.git)
+    git clone [https://github.com/azovayt/expo-modular-starter.git]
     cd expo-modular-starter
     ```
 
@@ -110,9 +110,7 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
     Projede kullanılan Google Font'lar için ilgili `@expo-google-fonts` paketlerini kurmanız gerekir. Örneğin, Nunito fontu için:
 
     ```bash
-    npm install @expo-google-fonts/nunito
-    # veya
-    yarn add @expo-google-fonts/nunito
+    npx expo install @expo-google-fonts/nunito expo-font
     ```
 
     `src/shared/hooks/useAppFonts.ts` ve `src/shared/utils/Fonts.ts` dosyalarınıza eklediğiniz tüm fontlar için ilgili paketleri yüklediğinizden emin olun.
@@ -132,24 +130,10 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
   ```typescript
   import { AppIcons, AppFonts, Button } from '@/shared/utils'; // veya '../shared/utils'
   // İkon kullanımı
-  <AppIcons.Ionicons name="home" className="text-blue-500 text-3xl" />
+  <AppIcons.Ionicons name="logo-react" size={24} color="white" />
   // Font kullanımı (NativeWind ile)
   <Text className="font-nunito-bold text-lg">Hello World</Text>
   // Ortak bileşen kullanımı
-  <Button title="Click Me" />
+  <Button title="Buton İsmi" />
   ```
 - **NativeWind ile Stil Oluşturma:** `tailwind.config.js` dosyasını güncelleyerek kendi özel Tailwind sınıflarınızı tanımlayabilirsiniz.
-
----
-
-## 🤝 Katkıda Bulunma
-
-Bu şablonu geliştirmeye açığım! Her türlü öneri, hata düzeltmesi veya yeni özellik katkısı memnuniyetle karşılanır. Katkıda bulunmak isterseniz lütfen bir Pull Request (PR) açmaktan çekinmeyin.
-
----
-
-## 📜 Lisans
-
-Bu proje, MIT Lisansı altında yayımlanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
-
----
