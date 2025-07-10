@@ -1,6 +1,6 @@
 # 🚀 Expo Modüler Başlangıç Şablonu
 
-Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar geliştirmek için tasarlanmış, iyi yapılandırılmış bir **Expo & React Native** başlangıç şablonudur. Proje yapısı, büyük ve karmaşık uygulamaların yönetimini basitleştirmek için **Domain Driven Design (DDD)** ve **modüler programlama** prensiplerini benimser.
+Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar geliştirmek için tasarlanmış, iyi yapılandırılmış bir **Expo ** başlangıç şablonudur. Proje yapısı, büyük ve karmaşık uygulamaların yönetimini basitleştirmek için **Domain Driven Design (DDD)** ve **modüler programlama** prensiplerini benimser.
 
 ---
 
@@ -8,7 +8,7 @@ Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar
 
 - **Expo SDK & Router:** Hızlı prototipleme ve sağlam navigasyon çözümleri için en güncel Expo SDK ve Expo Router entegrasyonu.
 - **Modüler Mimari:** Uygulamanızı `features` (özellikler) ve `shared` (paylaşılan) modüllere ayırarak kodun okunabilirliğini, test edilebilirliğini ve yeniden kullanılabilirliğini artırır.
-- **Domain Driven Design (DDD) Yaklaşımı:** Her bir iş alanı (`account`, `authentication`, `cart`, `orders` gibi) kendi içinde izole edilmiş bir yapıya sahiptir.
+- **Modüler Mimari İçeriği:** Her bir iş alanı (`account`, `authentication`, `cart`, `orders` gibi) kendi içinde izole edilmiş bir yapıya sahiptir.
   - **`components`**: Özelliğe özel UI bileşenleri.
   - **`hooks`**: Özelliğe özel React hook'ları.
   - **`screens`**: Özelliğe ait ana ekranlar.
@@ -28,61 +28,118 @@ Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamalar
 Proje, temel olarak iki ana bölümden oluşur: `app`, `features` ve `shared`.
 
 ```bash
-📦 src
- ┣ 📂 app                  # Expo Router ile navigasyon ve ana layout'lar
- ┃ ┣ 📂 (tabs)             # Sekmeli navigasyonun bulunduğu grup
- ┃ ┃ ┣ 📜 ScreenOne.tsx
- ┃ ┃ ┗ 📜 _layout.tsx      # Sekme layout'u
- ┃ ┗ 📜 _layout.tsx        # Ana uygulama layout'u (Font yükleme vb.)
- ┣ 📂 features             # Uygulamanın ana iş özelliklerini barındırır (Domain Driven)
- ┃ ┣ 📂 account            # Hesap yönetimi özelliği
- ┃ ┃ ┣ 📂 components
- ┃ ┃ ┣ 📂 hooks
- ┃ ┃ ┣ 📂 screens
- ┃ ┃ ┣ 📂 services
- ┃ ┃ ┣ 📂 store
- ┃ ┃ ┣ 📂 types
- ┃ ┃ ┗ 📜 index.ts         # Account modülünün ana export'ları
- ┃ ┣ 📂 authentication     # Kimlik doğrulama özelliği
- ┃ ┃ ┣ 📂 components
- ┃ ┃ ┣ 📂 hooks
- ┃ ┃ ┣ 📂 screens
- ┃ ┃ ┣ 📂 services
- ┃ ┃ ┣ 📂 store
- ┃ ┃ ┣ 📂 types
+📦 src/                 # Uygulamanın tüm kaynak kodunu içeren ana dizin.
+ ┣ 📂 app/               # Expo Router'ın navigasyon ve ana uygulama düzenini yönettiği dizin.
+ ┃ ┣ 📂 (tabs)/          # Sekmeli navigasyonun bulunduğu grup. Bu bir route grubu olduğu için parantez içinde.
+ ┃ ┃ ┣ 📜 ScreenFive.tsx
+ ┃ ┃ ┣ 📜 ScreenFour.tsx
+ ┃ ┃ ┣ 📜 ScreenOne.tsx  # Sekmelerdeki her bir ekran bileşeni.
+ ┃ ┃ ┣ 📜 ScreenThree.tsx
+ ┃ ┃ ┣ 📜 ScreenTwo.tsx
+ ┃ ┃ ┗ 📜 _layout.tsx    # Bu sekme grubunun düzenini (örn. alt sekme çubuğu) ve navigasyonunu tanımlayan layout dosyası.
+ ┃ ┗ 📜 _layout.tsx      # Uygulamanın en üst düzey layout dosyası. Genel navigasyon stack'i, font yükleme, Splash Screen yönetimi gibi global ayarlar burada yapılır.
+ ┣ 📂 features/          # Uygulamanın ana iş özelliklerini (domain'leri) barındıran dizin. Her alt klasör bir "özellik" veya "modül"dür.
+ ┃ ┣ 📂 account/         # Kullanıcı hesabı yönetimiyle ilgili tüm kodları içeren özellik modülü.
+ ┃ ┃ ┣ 📂 components/    # 'account' özelliği için özel olarak tasarlanmış UI bileşenleri.
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceOne.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki bileşenleri dışa aktarır.
+ ┃ ┃ ┣ 📂 hooks/         # 'account' özelliği için özel React hook'ları (örn. profil verilerini getiren bir hook).
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceTwo.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki hook'ları dışa aktarır.
+ ┃ ┃ ┣ 📂 screens/       # 'account' özelliğine ait ana ekran bileşenleri (örn. Profil Ayarları Ekranı).
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceThree.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki ekranları dışa aktarır.
+ ┃ ┃ ┣ 📂 services/      # 'account' özelliği ile ilgili API çağrıları, veri işleme veya diğer dış entegrasyon mantığı.
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceFour.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki servisleri dışa aktarır.
+ ┃ ┃ ┣ 📂 store/         # 'account' özelliğinin durum yönetimini (Redux Toolkit slice'lar, Zustand store'lar vb.) içeren kısım.
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceFive.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki store parçacıklarını dışa aktarır.
+ ┃ ┃ ┣ 📂 types/         # 'account' özelliğine özel TypeScript arayüzleri ve tipler (örn. User nesnesi tipi).
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceSix.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki tipleri dışa aktarır.
+ ┃ ┃ ┗ 📜 index.ts       # 'account' özelliğinin tüm alt modüllerini (components, hooks vb.) tek bir noktadan dışa aktarır.
+ ┃ ┣ 📂 authentication/  # Kullanıcı kimlik doğrulama (kayıt, giriş, şifre sıfırlama) özelliğini içeren modül. Yapısı 'account' ile aynıdır.
+ ┃ ┃ ┣ 📂 components/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceOne.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 hooks/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceTwo.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 screens/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceThree.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 services/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFour.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 store/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFive.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 types/
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceSix.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┗ 📜 index.ts
- ┃ ┣ 📂 cart               # Sepet özelliği
- ┃ ┃ ┣ 📂 components
- ┃ ┃ ┣ 📂 hooks
- ┃ ┃ ┣ 📂 screens
- ┃ ┃ ┣ 📂 services
- ┃ ┃ ┣ 📂 store
- ┃ ┃ ┣ 📂 types
+ ┃ ┣ 📂 cart/            # Alışveriş sepeti yönetimi özelliğini içeren modül. Yapısı diğer özellik modülleriyle benzerdir.
+ ┃ ┃ ┣ 📂 components/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceOne.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 hooks/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceTwo.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 screens/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceThree.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 services/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceFour.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 store/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceFive.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 types/
+ ┃ ┃ ┃ ┣ 📜 CartReferenceSix.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┗ 📜 index.ts
- ┃ ┗ 📂 orders             # Siparişler özelliği
- ┃ ┃ ┣ 📂 components
- ┃ ┃ ┣ 📂 hooks
- ┃ ┃ ┣ 📂 screens
- ┃ ┃ ┣ 📂 services
- ┃ ┃ ┣ 📂 store
- ┃ ┃ ┣ 📂 types
+ ┃ ┗ 📂 orders/          # Sipariş yönetimi özelliğini içeren modül.
+ ┃ ┃ ┣ 📂 components/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceOne.tsx
+ ┃ ┃ ┣ 📂 hooks/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceTwo.tsx
+ ┃ ┃ ┣ 📂 screens/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceThree.tsx
+ ┃ ┃ ┣ 📂 services/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceFour.tsx
+ ┃ ┃ ┣ 📂 store/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceFive.tsx
+ ┃ ┃ ┣ 📂 types/
+ ┃ ┃ ┃ ┣ 📜 index.ts
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceSix.tsx
  ┃ ┃ ┗ 📜 index.ts
- ┗ 📂 shared               # Uygulama genelinde paylaşılan kodlar ve yardımcılar
- ┃ ┣ 📂 components         # Ortak UI bileşenleri (örn: Button, Header)
- ┃ ┃ ┣ 📂 layout
- ┃ ┃ ┣ 📂 ui
- ┃ ┃ ┗ 📜 index.ts
- ┃ ┣ 📂 config             # Genel uygulama yapılandırmaları
- ┃ ┣ 📂 hooks              # Uygulama genelinde kullanılan özel React hook'ları
- ┃ ┃ ┣ 📜 useAppFonts.ts   # Tüm fontları yükleyen özel hook
- ┃ ┃ ┗ 📜 index.ts
- ┃ ┣ 📂 store              # Global durum yönetimi (henüz entegre değil, yer tutucu)
- ┃ ┣ 📂 types              # Global TypeScript tipleri
- ┃ ┣ 📂 utils              # Genel yardımcı fonksiyonlar ve varlık tanımları
- ┃ ┃ ┣ 📜 Fonts.ts         # Uygulamadaki tüm fontların isim tanımları
- ┃ ┃ ┣ 📜 Icons.ts         # Tüm ikon setlerinin tanımları
- ┃ ┃ ┗ 📜 index.ts
- ┃ ┗ 📜 index.ts           # Shared modülünün ana export'ları
+ ┗ 📂 shared/            # Uygulama genelinde tekrar kullanılan kod ve yardımcılar. Buradaki bileşenler/fonksiyonlar bir özelliğe özel değildir.
+ ┃ ┣ 📂 components/      # Uygulamanın farklı yerlerinde kullanılan genel UI bileşenleri.
+ ┃ ┃ ┣ 📂 layout/        # Uygulama genelinde kullanılan layout bileşenleri (örn. genel bir Header veya Footer).
+ ┃ ┃ ┃ ┣ 📜 Header.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┣ 📂 ui/            # Tekrar kullanılabilir, küçük ve atomsal UI bileşenleri (örn. Button, Input, Card).
+ ┃ ┃ ┃ ┣ 📜 Button.tsx
+ ┃ ┃ ┃ ┣ 📜 ButtonList.tsx
+ ┃ ┃ ┃ ┗ 📜 index.ts
+ ┃ ┃ ┗ 📜 index.ts       # Shared components'i tek bir noktadan dışa aktarır.
+ ┃ ┣ 📂 config/          # Uygulamanın çeşitli yapılandırma ayarlarını ve sabitlerini barındırır. (API anahtarları, uygulama sabitleri vb.)
+ ┃ ┣ 📂 hooks/           # Uygulama genelinde kullanılabilen özel React hook'ları.
+ ┃ ┃ ┣ 📜 index.ts       # Buradaki hook'ları dışa aktarır.
+ ┃ ┃ ┗ 📜 useAppFonts.ts # Uygulama başlangıcında tüm fontları yüklemekten sorumlu özel hook.
+ ┃ ┣ 📂 store/           # Global durum yönetimi için root store veya paylaşılan store yapılandırmaları (örneğin Redux store).
+ ┃ ┣ 📂 types/           # Uygulama genelinde kullanılan TypeScript arayüzleri ve tipler (API yanıt tipleri, global durum tipleri vb.).
+ ┃ ┣ 📂 utils/           # Çeşitli yardımcı fonksiyonlar, formatlayıcılar, validasyonlar ve sabit tanımları.
+ ┃ ┃ ┣ 📜 Fonts.ts       # Uygulamada kullanılan tüm font ailelerinin (Google Fonts veya özel fontlar) isimlerini ve varyasyonlarını tanımlayan dosya.
+ ┃ ┃ ┣ 📜 Icons.ts       # `@expo/vector-icons` kütüphanesindeki ikon setlerini merkezi olarak dışa aktaran dosya.
+ ┃ ┃ ┗ 📜 index.ts       # Utils klasöründeki tüm yardımcıları tek bir noktadan dışa aktarır.
+ ┃ ┗ 📜 index.ts         # Shared modülünün tüm alt modüllerini (components, hooks, utils vb.) tek bir noktadan dışa aktarır.
 ```
 
 ---
