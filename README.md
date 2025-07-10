@@ -44,19 +44,19 @@ Proje, temel olarak iki ana bölümden oluşur: `app`, `features` ve `shared`.
  ┃ ┃ ┃ ┣ 📜 AccountReferenceOne.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki bileşenleri dışa aktarır.
  ┃ ┃ ┣ 📂 hooks/         # 'account' özelliği için özel React hook'ları (örn. profil verilerini getiren bir hook).
- ┃ ┃ ┃ ┣ 📜 AccountReferenceTwo.tsx
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceTwo.ts
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki hook'ları dışa aktarır.
  ┃ ┃ ┣ 📂 screens/       # 'account' özelliğine ait ana ekran bileşenleri (örn. Profil Ayarları Ekranı).
  ┃ ┃ ┃ ┣ 📜 AccountReferenceThree.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki ekranları dışa aktarır.
  ┃ ┃ ┣ 📂 services/      # 'account' özelliği ile ilgili API çağrıları, veri işleme veya diğer dış entegrasyon mantığı.
- ┃ ┃ ┃ ┣ 📜 AccountReferenceFour.tsx
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceFour.ts
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki servisleri dışa aktarır.
  ┃ ┃ ┣ 📂 store/         # 'account' özelliğinin durum yönetimini (Redux Toolkit slice'lar, Zustand store'lar vb.) içeren kısım.
- ┃ ┃ ┃ ┣ 📜 AccountReferenceFive.tsx
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceFive.ts
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki store parçacıklarını dışa aktarır.
  ┃ ┃ ┣ 📂 types/         # 'account' özelliğine özel TypeScript arayüzleri ve tipler (örn. User nesnesi tipi).
- ┃ ┃ ┃ ┣ 📜 AccountReferenceSix.tsx
+ ┃ ┃ ┃ ┣ 📜 AccountReferenceSix.ts
  ┃ ┃ ┃ ┗ 📜 index.ts     # Bu klasördeki tipleri dışa aktarır.
  ┃ ┃ ┗ 📜 index.ts       # 'account' özelliğinin tüm alt modüllerini (components, hooks vb.) tek bir noktadan dışa aktarır.
  ┃ ┣ 📂 authentication/  # Kullanıcı kimlik doğrulama (kayıt, giriş, şifre sıfırlama) özelliğini içeren modül. Yapısı 'account' ile aynıdır.
@@ -64,19 +64,19 @@ Proje, temel olarak iki ana bölümden oluşur: `app`, `features` ve `shared`.
  ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceOne.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 hooks/
- ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceTwo.tsx
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceTwo.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 screens/
  ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceThree.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 services/
- ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFour.tsx
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFour.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 store/
- ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFive.tsx
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceFive.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 types/
- ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceSix.tsx
+ ┃ ┃ ┃ ┣ 📜 AuthenticationReferenceSix.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┗ 📜 index.ts
  ┃ ┣ 📂 cart/            # Alışveriş sepeti yönetimi özelliğini içeren modül. Yapısı diğer özellik modülleriyle benzerdir.
@@ -84,19 +84,19 @@ Proje, temel olarak iki ana bölümden oluşur: `app`, `features` ve `shared`.
  ┃ ┃ ┃ ┣ 📜 CartReferenceOne.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 hooks/
- ┃ ┃ ┃ ┣ 📜 CartReferenceTwo.tsx
+ ┃ ┃ ┃ ┣ 📜 CartReferenceTwo.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 screens/
  ┃ ┃ ┃ ┣ 📜 CartReferenceThree.tsx
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 services/
- ┃ ┃ ┃ ┣ 📜 CartReferenceFour.tsx
+ ┃ ┃ ┃ ┣ 📜 CartReferenceFour.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 store/
- ┃ ┃ ┃ ┣ 📜 CartReferenceFive.tsx
+ ┃ ┃ ┃ ┣ 📜 CartReferenceFive.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┣ 📂 types/
- ┃ ┃ ┃ ┣ 📜 CartReferenceSix.tsx
+ ┃ ┃ ┃ ┣ 📜 CartReferenceSix.ts
  ┃ ┃ ┃ ┗ 📜 index.ts
  ┃ ┃ ┗ 📜 index.ts
  ┃ ┗ 📂 orders/          # Sipariş yönetimi özelliğini içeren modül.
@@ -105,19 +105,19 @@ Proje, temel olarak iki ana bölümden oluşur: `app`, `features` ve `shared`.
  ┃ ┃ ┃ ┗ 📜 OrdersReferenceOne.tsx
  ┃ ┃ ┣ 📂 hooks/
  ┃ ┃ ┃ ┣ 📜 index.ts
- ┃ ┃ ┃ ┗ 📜 OrdersReferenceTwo.tsx
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceTwo.ts
  ┃ ┃ ┣ 📂 screens/
  ┃ ┃ ┃ ┣ 📜 index.ts
  ┃ ┃ ┃ ┗ 📜 OrdersReferenceThree.tsx
  ┃ ┃ ┣ 📂 services/
  ┃ ┃ ┃ ┣ 📜 index.ts
- ┃ ┃ ┃ ┗ 📜 OrdersReferenceFour.tsx
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceFour.ts
  ┃ ┃ ┣ 📂 store/
  ┃ ┃ ┃ ┣ 📜 index.ts
- ┃ ┃ ┃ ┗ 📜 OrdersReferenceFive.tsx
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceFive.ts
  ┃ ┃ ┣ 📂 types/
  ┃ ┃ ┃ ┣ 📜 index.ts
- ┃ ┃ ┃ ┗ 📜 OrdersReferenceSix.tsx
+ ┃ ┃ ┃ ┗ 📜 OrdersReferenceSix.ts
  ┃ ┃ ┗ 📜 index.ts
  ┗ 📂 shared/            # Uygulama genelinde tekrar kullanılan kod ve yardımcılar. Buradaki bileşenler/fonksiyonlar bir özelliğe özel değildir.
  ┃ ┣ 📂 components/      # Uygulamanın farklı yerlerinde kullanılan genel UI bileşenleri.
