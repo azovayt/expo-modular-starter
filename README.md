@@ -186,17 +186,19 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
 - **Paylaşılan Bileşenleri/Yardımcıları Kullanma:** `src/shared` altındaki modülleri projenizin herhangi bir yerinden import ederek kullanın:
 
   ```typescript
-  import { AppIcons, AppFonts } from '@/shared/utils'; // veya '../shared/utils'
-  // İkon kullanımı
+  // Örnek Icon kullanımı
+  import { AppIcons } from "@/shared/utils";
   <AppIcons.Ionicons name="logo-react" size={24} color="white" />
-  // Font kullanımı (NativeWind ile)
-  <Text className="font-nunito-bold text-lg">Hello World</Text>
-
   ```
 
   ```typescript
   // Örnek modül kullanımı
   import { AuthenticationReferenceOne } from "@/features/authentication/components";
+  ```
+
+  ```typescript
+  // Örnek Font kullanımı
+  <Text className="font-nunito-bold text-lg">Hello World</Text>
   ```
 
 - **NativeWind ile Stil Oluşturma:** `tailwind.config.js` dosyasını güncelleyerek kendi özel Tailwind sınıflarınızı tanımlayabilirsiniz.

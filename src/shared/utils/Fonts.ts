@@ -11,8 +11,8 @@
 export const AppFonts = {
   /**
    * Nunito Font Ailesi (Google Fonts)
-   * Yüklemek için: '@expo-google-fonts/nunito' paketini kurmalısın.
-   * Ve App.js/_layout.tsx içinde useAppFonts hook'unu kullanarak yüklemelisin.
+   * Yüklemek için: '@expo-google-fonts/nunito' paketi kurulmalı.
+   * Ve App.js/_layout.tsx içinde useAppFonts hook'unu kullanarak yüklenmeli.
    */
   Nunito: {
     Black: "Nunito_900Black",
