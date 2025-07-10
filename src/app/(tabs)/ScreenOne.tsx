@@ -1,15 +1,15 @@
 // src/app/(tabs)/ScreenFive.tsx
 import { View, Text, Alert } from "react-native";
 import React from "react";
-import { Button } from "../../shared/components/ui";
-import { Header } from "../../shared/components/layout";
-import { ButtonList } from "../../shared/components/ui/ButtonList";
+import { Button } from "@/shared/components/ui";
+import { Header } from "@/shared/components/layout";
+import { ButtonList } from "@/shared/components/ui/ButtonList";
 
 // Örnek modül bileşenler
-import { AuthenticationReferenceOne } from "../../features/authentication/components";
-import { AccountReferenceOne } from "../../features/account/components";
-import { CartReferenceOne } from "../../features/cart/components";
-import { OrdersReferenceOne } from "../../features/orders/components";
+import { AuthenticationReferenceOne } from "@/features/authentication/components";
+import { AccountReferenceOne } from "@/features/account/components";
+import { CartReferenceOne } from "@/features/cart/components";
+import { OrdersReferenceOne } from "@/features/orders/components";
 
 export default function ScreenOne() {
   const handlePress = (message: string) => {

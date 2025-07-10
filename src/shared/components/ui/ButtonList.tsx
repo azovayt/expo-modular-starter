@@ -1,7 +1,7 @@
 import { View, Text, Alert } from "react-native";
 import React from "react";
 import { Button } from "./Button";
-import { AppIcons } from "../../../shared/utils";
+import { AppIcons } from "@/shared/utils";
 
 export const ButtonList = () => {
   const handlePress = (message: string) => {

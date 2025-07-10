@@ -184,13 +184,19 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
 
 - **Yeni Bir Özellik Ekleme:** `src/features` altına yeni bir klasör (örn: `products`) oluşturun ve içinde `components`, `screens`, `hooks`, `services`, `store`, `types` gibi gerekli alt klasörleri ve `index.ts` dosyasını oluşturun.
 - **Paylaşılan Bileşenleri/Yardımcıları Kullanma:** `src/shared` altındaki modülleri projenizin herhangi bir yerinden import ederek kullanın:
+
   ```typescript
-  import { AppIcons, AppFonts, Button } from '@/shared/utils'; // veya '../shared/utils'
+  import { AppIcons, AppFonts } from '@/shared/utils'; // veya '../shared/utils'
   // İkon kullanımı
   <AppIcons.Ionicons name="logo-react" size={24} color="white" />
   // Font kullanımı (NativeWind ile)
   <Text className="font-nunito-bold text-lg">Hello World</Text>
-  // Ortak bileşen kullanımı
-  <Button title="Buton İsmi" />
+
   ```
+
+  ```typescript
+  // Örnek modül kullanımı
+  import { AuthenticationReferenceOne } from "@/features/authentication/components";
+  ```
+
 - **NativeWind ile Stil Oluşturma:** `tailwind.config.js` dosyasını güncelleyerek kendi özel Tailwind sınıflarınızı tanımlayabilirsiniz.

@@ -1,6 +1,19 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "baseUrl": ".", // Bu, yolların projenin kök dizininden başlamasını sağlar.
+    "paths": {
+      // Bu genel takma ad, src altındaki her şeye '@/' ile erişim sağlar.
+      // Örneğin, src/screens/HomeScreen.tsx için '@/screens/HomeScreen'.
+      "@/*": ["./src/*"],
+
+      // Projenin ana mantıksal katmanları için takma adlar
+      // Bu, "@shared/components/ui" kullanımını mümkün kılar.
+      "@app/*": ["./src/app/*"],
+      "@features/*": ["./src/features/*"],
+      "@shared/*": ["./src/shared/*"]
+    },
     "strict": true
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
