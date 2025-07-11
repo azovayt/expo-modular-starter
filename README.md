@@ -1,6 +1,6 @@
 # 🚀 Expo Modüler Başlangıç Şablonu
 
-Bu proje, ölçeklenebilir, bakımı kolay ve özellik odaklı mobil uygulamaların geliştirilmesi sürecini optimize etmek amacıyla bizzat tasarlayıp kullandığım bir Expo başlangıç şablonudur. Kendi projelerimde tutarlı ve verimli bir başlangıç noktası sağlamak adına geliştirdiğim bu şablon, Modüler Mimari prensiplerini benimseyerek, karmaşık uygulamaların yönetimini basitleştirmeyi hedefler.
+Bu proje, kendi mobil uygulama geliştirme süreçlerimi hızlandırmak ve daha düzenli hale getirmek amacıyla tasarladığım bir Expo başlangıç şablonudur. Kendi projelerimde ölçeklenebilir, bakımı kolay ve özellik odaklı uygulamalar geliştirmek için kullandığım bu şablon, Modüler Mimari prensipleriyle karmaşık yapıları basitleştirmeyi hedefler. Böylece her yeni projede temel kurulumla uğraşmak yerine, doğrudan geliştirmeye odaklanabiliyorum.
 
 ---
 
